@@ -7,3 +7,4 @@ Kibble.lock
 # Example build artifacts
 examples/*.rs
 examples/*.exe
+*.pdb
