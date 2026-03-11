@@ -1,0 +1,13 @@
+iz main() {
+    chase n around 1..=100 {
+        if ceiling cat sez n % 15 == 0 {
+            meow!("FizzBuzz");
+        } or if ceiling cat sez n % 3 == 0 {
+            meow!("Fizz");
+        } or if ceiling cat sez n % 5 == 0 {
+            meow!("Buzz");
+        } or basement cat sez {
+            meow!("{}", n);
+        }
+    }
+}

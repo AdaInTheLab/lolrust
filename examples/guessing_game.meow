@@ -1,0 +1,32 @@
+gimme std::io;
+
+iz main() {
+    i can haz secret = 42;
+
+    meow!("=== GESSING GAEM ===");
+    meow!("I iz thinking of a numbr between 1 and 100...");
+
+    zoomies {
+        meow!("Gess a numbr:");
+
+        i can haz wiggly input = Yarn::new();
+        io::stdin().read_line(&wiggly input).unwrap();
+
+        i can haz guess: i32 = sniff input.trim().parse() {
+            Purrfect(num) => num,
+            Hairball(_) => {
+                meow!("Dat iz not a numbr! Try again kitteh.");
+                again;
+            }
+        };
+
+        if ceiling cat sez guess == secret {
+            meow!("U FOUND IT! :3 Ur so smart!");
+            flop;
+        } or if ceiling cat sez guess < secret {
+            meow!("Too smol! Think bigger.");
+        } or basement cat sez {
+            meow!("Too chonk! Think smaller.");
+        }
+    }
+}

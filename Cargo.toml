@@ -1,0 +1,8 @@
+[package]
+name = "lolrust"
+version = "0.1.0"
+edition = "2021"
+description = "A transpiler from .meow (lolcat Rust) to valid Rust. i can haz rust?"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }

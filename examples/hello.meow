@@ -1,0 +1,13 @@
+iz main() {
+    meow!("Oh hai! I iz a kitteh program!");
+
+    i can haz name = "Ceiling Cat";
+    i can haz wiggly count = 0;
+
+    chase i around 0..3 {
+        meow!("meow #{}", i);
+        count = count + 1;
+    }
+
+    meow!("{} sed meow {} timez", name, count);
+}

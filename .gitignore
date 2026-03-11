@@ -1,0 +1,9 @@
+/target
+litter_box/
+*.exe
+*.rs.bk
+Kibble.lock
+
+# Example build artifacts
+examples/*.rs
+examples/*.exe
