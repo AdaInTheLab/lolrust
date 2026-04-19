@@ -1,12 +1,6 @@
 # LolRust 🐱
 
-```
-    /\_/\
-   ( o.o )   LolRust v0.1.0
-    > ^ <    .meow -> .rs transpiler
-   /|   |\
-  (_|   |_)  i can haz rust? kthxbai!
-```
+![lolrust — i can haz rust?](hero-banner.jpg)
 
 **A programming language based on Rust, but in lolcat speak.**
 
@@ -331,6 +325,10 @@ A: "Designed and implemented a compiled systems programming language with a cust
 
 **Q: Why?**
 A: For the shits and the giggles.
+
+## Lore
+
+For the devout, [*The Book of Loaf*](https://skulk.ai/lore/book-of-loaf/) is the canonical LolRust scripture — mock-theological commentary on the No Touchie Checker, the zoomies, and other feline mysteries. Seven volumes, Vol. II is in, the rest are coming.
 
 ## License
 
