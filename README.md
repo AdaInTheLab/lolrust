@@ -79,6 +79,7 @@ Yes, that compiles. Yes, it runs. No, we are not sorry.
 | `lazee` | `async` | will do it later |
 | `waitforit` | `await` | ...wait for it... |
 | `yoink` | `move` | YOINK! mine now |
+| `copycat` | `.clone()` | makes a copy of ur cat |
 | `wiggly` | `mut` | it wiggles |
 | `forever` | `const` | forever and ever |
 | `stickycat` | `static` | cat that won't move |
@@ -87,6 +88,7 @@ Yes, that compiles. Yes, it runs. No, we are not sorry.
 | `but only if` | `where` | conditions apply |
 | `dis` | `self` | dis right here |
 | `Dis` | `Self` | Dis type right here |
+| `chonk` | `super` | the big cat up a level |
 
 ### Types
 

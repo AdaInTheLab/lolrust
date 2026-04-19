@@ -324,6 +324,19 @@ mod tests {
     }
 
     #[test]
+    fn chonk_is_super() {
+        assert_eq!(transpile("chonk::foo"), "super::foo");
+        assert_eq!(transpile("gimme chonk::bar;"), "use super::bar;");
+        // Should NOT replace inside "chonky"
+        assert_eq!(transpile("iz_chonky: bool"), "iz_chonky: bool");
+    }
+
+    #[test]
+    fn copycat_is_clone() {
+        assert_eq!(transpile("x.copycat()"), "x.clone()");
+    }
+
+    #[test]
     fn ampersand_mut() {
         assert_eq!(transpile("&wiggly x"), "&mut x");
     }

@@ -32,6 +32,7 @@ pub fn keyword_mappings() -> Vec<(&'static str, &'static str)> {
         ("everycat", "pub"),
         ("cough up", "return"),
         ("copycat", "clone"),
+        ("chonk", "super"),
         ("forever", "const"),
         ("flavurz", "enum"),
         ("zoomies", "loop"),

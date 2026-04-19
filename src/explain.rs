@@ -66,7 +66,6 @@ pub fn explain_errors(rustc_output: &str) -> String {
         ("error:", "OH NOES:"),
         ("warning:", "CAREFUL KITTEH:"),
         ("note:", "btw:"),
-        (" --> ", " --> "),  // keep file locations as-is
     ];
 
     for (rust_msg, cat_msg) in translations {
