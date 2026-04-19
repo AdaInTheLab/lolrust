@@ -3,6 +3,21 @@ name = "lolrust"
 version = "0.1.0"
 edition = "2021"
 description = "A transpiler from .meow (lolcat Rust) to valid Rust. i can haz rust?"
+license = "MIT"
+repository = "https://github.com/AdaInTheLab/lolrust"
+homepage = "https://github.com/AdaInTheLab/lolrust"
+documentation = "https://github.com/AdaInTheLab/lolrust#readme"
+readme = "README.md"
+keywords = ["lolcat", "transpiler", "esolang", "language", "meow"]
+categories = ["command-line-utilities", "compilers", "development-tools"]
+exclude = [
+    "examples/*.exe",
+    "examples/*.pdb",
+    "examples/*.rs",
+    "lolrust-vscode/**",
+    "hero-banner.jpg",
+    "target/**",
+]
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }

@@ -1,6 +1,6 @@
 # LolRust 🐱
 
-![lolrust — i can haz rust?](hero-banner.jpg)
+![lolrust — i can haz rust?](https://raw.githubusercontent.com/AdaInTheLab/lolrust/main/hero-banner.jpg)
 
 [![Stars](https://img.shields.io/github/stars/AdaInTheLab/lolrust?style=flat&logo=github)](https://github.com/AdaInTheLab/lolrust/stargazers)
 [![Forks](https://img.shields.io/github/forks/AdaInTheLab/lolrust?style=flat&logo=github)](https://github.com/AdaInTheLab/lolrust/network/members)
