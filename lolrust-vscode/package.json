@@ -1,0 +1,35 @@
+{
+  "name": "lolrust",
+  "displayName": "LolRust - Meow Language Support",
+  "description": "Syntax highlighting for .meow files (LolRust - lolcat Rust)",
+  "version": "0.1.0",
+  "publisher": "lolrust",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages"],
+  "icon": "icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "lolrust",
+        "aliases": ["LolRust", "meow"],
+        "extensions": [".meow"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lolrust",
+        "scopeName": "source.meow",
+        "path": "./syntaxes/meow.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "lolrust",
+        "path": "./snippets.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "LolRust",
+  "scopeName": "source.meow",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#char-literals" },
+    { "include": "#numbers" },
+    { "include": "#keywords-multiword" },
+    { "include": "#keywords-control" },
+    { "include": "#keywords-declaration" },
+    { "include": "#keywords-modifier" },
+    { "include": "#keywords-other" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#macros" },
+    { "include": "#functions" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.meow",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.meow",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.meow",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.meow",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.raw.meow",
+          "begin": "r(#*)\"",
+          "end": "\"\\1"
+        }
+      ]
+    },
+    "char-literals": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.meow",
+          "match": "'(\\\\.|[^'])'"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.meow",
+          "match": "\\b0x[0-9a-fA-F_]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.meow",
+          "match": "\\b0b[01_]+\\b"
+        },
+        {
+          "name": "constant.numeric.octal.meow",
+          "match": "\\b0o[0-7_]+\\b"
+        },
+        {
+          "name": "constant.numeric.float.meow",
+          "match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.meow",
+          "match": "\\b[0-9][0-9_]*(i8|i16|i32|i64|i128|isize|u8|u16|u32|u64|u128|usize|f32|f64)?\\b"
+        }
+      ]
+    },
+    "keywords-multiword": {
+      "patterns": [
+        {
+          "name": "keyword.control.meow",
+          "match": "\\bor if ceiling cat sez\\b"
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "\\bif ceiling cat sez\\b"
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "\\bor basement cat sez\\b"
+        },
+        {
+          "name": "keyword.other.meow",
+          "match": "\\bi can haz wiggly\\b"
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "\\bkeep goin while\\b"
+        },
+        {
+          "name": "keyword.other.meow",
+          "match": "\\bi can haz\\b"
+        },
+        {
+          "name": "keyword.other.meow",
+          "match": "\\bbut only if\\b"
+        },
+        {
+          "name": "keyword.operator.meow",
+          "match": "\\bpretend iz\\b"
+        },
+        {
+          "name": "keyword.control.meow",
+          "match": "\\bcough up\\b"
+        }
+      ]
+    },
+    "keywords-control": {
+      "patterns": [
+        {
+          "name": "keyword.control.meow",
+          "match": "\\b(zoomies|chase|around|flop|again|sniff)\\b"
+        }
+      ]
+    },
+    "keywords-declaration": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.meow",
+          "match": "\\b(iz|loaf|teech|flavurz|skillz|gimme|box|kinda)\\b"
+        }
+      ]
+    },
+    "keywords-modifier": {
+      "patterns": [
+        {
+          "name": "keyword.modifier.meow",
+          "match": "\\b(everycat|wiggly|yolo|forever|stickycat|lazee|waitforit|yoink)\\b"
+        }
+      ]
+    },
+    "keywords-other": {
+      "patterns": [
+        {
+          "name": "variable.language.meow",
+          "match": "\\b(dis|Dis|chonk)\\b"
+        },
+        {
+          "name": "entity.name.function.meow",
+          "match": "\\b(copycat)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "entity.name.type.meow",
+          "match": "\\b(Yarn|Pile|Cardboard|MaybeCheezburgr|Tryz)\\b"
+        },
+        {
+          "name": "entity.name.type.primitive.meow",
+          "match": "\\b(i8|i16|i32|i64|i128|isize|u8|u16|u32|u64|u128|usize|f32|f64|bool|char)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.meow",
+          "match": "\\b(yus|nope)\\b"
+        },
+        {
+          "name": "constant.language.option.meow",
+          "match": "\\b(Has|EmptyBowl|Purrfect|Hairball)\\b"
+        }
+      ]
+    },
+    "macros": {
+      "patterns": [
+        {
+          "name": "entity.name.function.macro.meow",
+          "match": "\\b(meow|hisss|ohno)!"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.meow",
+          "match": "\\b([a-z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.meow",
+          "match": "(=>|->|::|\\.\\.=?|&&|\\|\\||==|!=|<=|>=|<<|>>|[+\\-*/%&|^!<>=])"
+        }
+      ]
+    }
+  }
+}
