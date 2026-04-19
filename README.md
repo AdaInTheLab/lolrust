@@ -335,7 +335,9 @@ A: For the shits and the giggles.
 
 For the devout, [*The Book of Loaf*](https://skulk.ai/lore/book-of-loaf/) is the canonical LolRust scripture — mock-theological commentary on the No Touchie Checker, the zoomies, and other feline mysteries. Seven volumes, Vol. II is in, the rest are coming.
 
-## Star History
+## Analytics
+
+![Repobeats activity](https://repobeats.axiom.co/api/embed/6df3c3b85ab364d0807c362d64c362542ae997ba.svg "Repobeats analytics image")
 
 <a href="https://star-history.com/#AdaInTheLab/lolrust&Date">
   <img src="https://api.star-history.com/svg?repos=AdaInTheLab/lolrust&type=Date" alt="Star History Chart" width="600" />
