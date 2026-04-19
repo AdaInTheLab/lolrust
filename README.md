@@ -2,6 +2,11 @@
 
 ![lolrust — i can haz rust?](hero-banner.jpg)
 
+[![Stars](https://img.shields.io/github/stars/AdaInTheLab/lolrust?style=flat&logo=github)](https://github.com/AdaInTheLab/lolrust/stargazers)
+[![Forks](https://img.shields.io/github/forks/AdaInTheLab/lolrust?style=flat&logo=github)](https://github.com/AdaInTheLab/lolrust/network/members)
+[![Last commit](https://img.shields.io/github/last-commit/AdaInTheLab/lolrust?style=flat)](https://github.com/AdaInTheLab/lolrust/commits/main)
+[![License](https://img.shields.io/github/license/AdaInTheLab/lolrust?style=flat)](LICENSE)
+
 **A programming language based on Rust, but in lolcat speak.**
 
 Write real, compiled programs using keywords like `i can haz wiggly`, `zoomies`, and `yolo`. LolRust transpiles `.meow` files into valid Rust, then compiles them with `rustc`. You get Rust's type system, borrow checker (the **No Touchie Checker**), and zero-cost abstractions — but with 100% more cat.
@@ -329,6 +334,12 @@ A: For the shits and the giggles.
 ## Lore
 
 For the devout, [*The Book of Loaf*](https://skulk.ai/lore/book-of-loaf/) is the canonical LolRust scripture — mock-theological commentary on the No Touchie Checker, the zoomies, and other feline mysteries. Seven volumes, Vol. II is in, the rest are coming.
+
+## Star History
+
+<a href="https://star-history.com/#AdaInTheLab/lolrust&Date">
+  <img src="https://api.star-history.com/svg?repos=AdaInTheLab/lolrust&type=Date" alt="Star History Chart" width="600" />
+</a>
 
 ## License
 
