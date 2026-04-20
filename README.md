@@ -9,7 +9,7 @@
 
 **A programming language based on Rust, but in lolcat speak.**
 
-Write real, compiled programs using keywords like `i can haz wiggly`, `zoomies`, and `yolo`. LolRust transpiles `.meow` files into valid Rust, then compiles them with `rustc`. You get Rust's type system, borrow checker (the **No Touchie Checker**), and zero-cost abstractions — but with 100% more cat.
+Write real, compiled programs using keywords like `i can haz wiggly`, `zoomies`, and `yolo`. LolRust transpiles `.meow` files into valid Rust, then compiles them with `rustc`. You get Rust's type system, borrow checker (the **No Touchie Checker**), and zero-cost abstractions. But with 100% more cat.
 
 ## Quick Start
 
@@ -291,12 +291,12 @@ cp -r lolrust-vscode ~/.vscode/extensions/lolrust
 
 ## How It Works
 
-LolRust is a **transpiler** — it converts `.meow` files into valid Rust, then compiles them with `rustc`.
+LolRust is a **transpiler**. It converts `.meow` files into valid Rust, then compiles them with `rustc`.
 
 The transpiler uses a **single-pass character scanner** that:
-1. Tracks context (strings, comments, code) so keywords inside `"strings"` and `// comments` are never replaced
-2. Tries **longest matches first** so `i can haz wiggly` becomes `let mut`, not `let wiggly`
-3. Checks **word boundaries** so `wizard` doesn't become `wfnard` and `dismiss` doesn't become `selfmiss`
+1. Tracks context. Keywords inside `"strings"` and `// comments` never get replaced.
+2. Longest matches first, so `i can haz wiggly` becomes `let mut` and not `let wiggly`.
+3. Respects word boundaries, which is why `wizard` stays `wizard` and `dismiss` doesn't become `selfmiss`.
 
 It's ~350 lines of Rust that transforms cat speak into systems programming. The future is meow.
 
@@ -333,7 +333,7 @@ A: For the shits and the giggles.
 
 ## Lore
 
-For the devout, [*The Book of Loaf*](https://skulk.ai/lore/book-of-loaf/) is the canonical LolRust scripture — mock-theological commentary on the No Touchie Checker, the zoomies, and other feline mysteries. Seven volumes, Vol. II is in, the rest are coming.
+For the devout, [*The Book of Loaf*](https://skulk.ai/lore/book-of-loaf/) is the canonical LolRust scripture. Mock-theological commentary on the No Touchie Checker, the zoomies, and other feline mysteries. Seven volumes, Vol. II is in, the rest are coming.
 
 ## Analytics
 
