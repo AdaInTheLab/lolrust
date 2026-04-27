@@ -118,7 +118,7 @@ fn test_full_program() {
 iz main() {
     i can haz wiggly count: i32 = 0;
 
-    zoomies {
+    zoomzoom {
         if ceiling cat sez count >= 3 {
             meow!("done! count iz {}", count);
             flop;

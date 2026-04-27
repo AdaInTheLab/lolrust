@@ -1,6 +1,6 @@
 [package]
 name = "lolrust"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "A transpiler from .meow (lolcat Rust) to valid Rust. i can haz rust?"
 license = "MIT"
@@ -19,5 +19,14 @@ exclude = [
     "target/**",
 ]
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+wasm = ["dep:wasm-bindgen"]
+
 [dependencies]
 clap = { version = "4", features = ["derive"] }
+rand = "0.8"
+wasm-bindgen = { version = "0.2", optional = true }

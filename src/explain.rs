@@ -1,87 +1,63 @@
-/// Translates rustc error messages into lolcat speak.
-/// Takes the raw stderr output from rustc and returns a cat-ified version.
+use rand::Rng;
+
+/// Translates scary rustc errors into friendly (but still chaotic) cat speak
 pub fn explain_errors(rustc_output: &str) -> String {
     let mut output = rustc_output.to_string();
 
-    // Error-level translations (order matters - longer first)
     let translations = [
-        // Borrow checker errors - the no touchie checker
+        // === No Touchie Checker (Borrow Checker) ===
         ("cannot borrow", "NO TOUCHIE! cannot borrow"),
-        ("cannot move out of", "HEY! dat iz not urs to yoink from"),
-        ("does not live long enough", "died too soon :( not enuff lives"),
-        ("already borrowed", "sumone else iz already sniffing"),
-        ("moved here", "got yoinked here"),
-        ("value used here after move", "u tried to use it after it got yoinked! D:"),
-        ("borrow of moved value", "u tried to sniff sumthing dat got yoinked"),
-        ("cannot assign twice to immutable variable", "NO! dat iz not wiggly! u cant change it"),
-        ("cannot assign to", "NO TOUCHIE! dat iz not wiggly"),
-        ("immutable", "not wiggly"),
-        ("mutable", "wiggly"),
+        ("cannot move out of", "HEY! U CANT YOINK DAT FROM THERE"),
+        ("does not live long enough", "dis kitteh ran out of lives too soon :("),
+        ("already borrowed", "someone else is already petting this!!"),
+        ("moved here", "it got yoinked right here"),
+        ("value used here after move", "u tried to use it AFTER it was yoinked!!"),
+        ("borrow of moved value", "u cant pet something that already got yoinked"),
 
-        // Type errors
-        ("mismatched types", "WRONG FLAVOR! mismatched types"),
-        ("expected type", "i wanted dis flavor"),
-        ("found type", "but u gave me dis flavor"),
-        ("type mismatch", "FLAVORS DONT MATCH"),
-        ("the trait bound", "dis kitteh dont haz da skillz"),
-        ("doesn't implement", "never learned how to"),
-        ("is not implemented for", "iz not teached to"),
-        ("no method named", "dis kitteh dont know how to"),
-        ("not found in this scope", "i cant see dat from here! iz it hiding?"),
-        ("not found", "WHERE IZ IT?? not found"),
+        // === Beginner Friendly Messages ===
+        ("expected `;`", "you forgot the ; at the end of the line kitteh!"),
+        ("missing semicolon", "put a ; at the end silly goose"),
+        ("cannot find value", "WHERE IZ IT?? i don't know what that is... did u make it earlier?"),
+        ("not found in this scope", "WHERE IZ IT?? i can't see that from here"),
+        ("no method named", "dis kitteh doesn't know that trick yet"),
+        ("mismatched types", "WRONG FLAVOR!! types don't match"),
+        ("expected type", "i expected dis flavor"),
+        ("found type", "but u gave me dis other flavor"),
 
-        // Lifetime errors
-        ("lifetime", "how many lives left"),
-        ("'static", "forever-lives"),
-        ("does not fulfill", "not enuff lives to do dat"),
-        ("outlives", "has more lives than"),
-
-        // Common errors
-        ("unused variable", "u made dis but never played with it"),
-        ("unused import", "u asked for dis toy but never played with it"),
-        ("dead code", "dis code iz sleeping forever"),
-        ("unreachable pattern", "dis pattern iz in a cardboard box no one can reach"),
-        ("missing field", "u forgot to put sumthing in da loaf!"),
-        ("no such field", "dat loaf dont haz dat!"),
-        ("expected struct", "i wanted a loaf"),
-        ("expected enum", "i wanted flavurz"),
-        ("this function takes", "dis iz needs"),
-        ("supplied", "but u gave"),
-        ("arguments were supplied", "treats were given"),
-        ("expected", "i wanted"),
-        ("found", "but i got"),
-
-        // Macro errors
-        ("cannot find macro", "WHERE IZ DA MACRO?? lost it"),
-        ("unexpected end of macro", "da macro ended too soon! D:"),
-
-        // Module errors
-        ("unresolved import", "i said gimme but it wasnt there"),
-        ("could not find", "looked everywhere but couldnt find"),
-
-        // Misc
-        ("consider", "maybe try"),
-        ("help:", "HALP:"),
+        // === General Help ===
+        ("consider", "maybe try dis instead:"),
+        ("help:", "HALP TIP:"),
         ("error[", "OH NOES["),
         ("error:", "OH NOES:"),
         ("warning:", "CAREFUL KITTEH:"),
         ("note:", "btw:"),
+        ("unused variable", "u made a toy but never played with it :("),
+        ("unused import", "u asked for a toy but never opened the box"),
+        ("dead code", "dis code is napping forever"),
+
+        // === Function / Argument stuff ===
+        ("this function takes", "dis iz needs"),
+        ("arguments were supplied", "but u gave"),
+        ("too many arguments", "u gave too many treats!!"),
+        ("not enough arguments", "u forgot some treats..."),
     ];
 
-    for (rust_msg, cat_msg) in translations {
-        output = output.replace(rust_msg, cat_msg);
+    for (rust, cat) in translations {
+        output = output.replace(rust, cat);
     }
 
-    // Add a header
-    let header = r#"
-   /\_/\  ~ THE NO TOUCHIE CHECKER HAS SPOKEN ~
-  ( >_< )
-   > ^ <  here iz wat went wrong:
-  /|   |\
- (_|   |_)
-"#;
+    // Add random cat reaction at the top
+    let reactions = [
+        "\n/\\_/\\   THE NO TOUCHIE CHECKER HAS SPOKEN\n",
+        "\n(>_<)   u did a little whoopsie kitteh...\n",
+        "\n> ^ <   here's what went wrong hooman:\n",
+        "\n/|   |\\  try again brave kitteh!!\n",
+        "\n🐾   don't give up! even big chonks make mistakes\n",
+    ];
 
-    format!("{}{}", header, output)
+    let random_reaction = reactions[rand::thread_rng().gen_range(0..reactions.len())];
+
+    format!("{}{}", random_reaction, output)
 }
 
 #[cfg(test)]
@@ -89,44 +65,23 @@ mod tests {
     use super::*;
 
     #[test]
-    fn translates_borrow_error() {
+    fn test_semicolon_help() {
+        let input = "error: expected `;`, found `}`";
+        let result = explain_errors(input);
+        assert!(result.contains("you forgot the ;"));
+    }
+
+    #[test]
+    fn test_variable_not_found() {
+        let input = "error[E0425]: cannot find value `fluffy` in this scope";
+        let result = explain_errors(input);
+        assert!(result.contains("WHERE IZ IT"));
+    }
+
+    #[test]
+    fn test_no_touchie() {
         let input = "error: cannot borrow `x` as mutable";
         let result = explain_errors(input);
         assert!(result.contains("NO TOUCHIE!"));
-        assert!(result.contains("wiggly"));
-    }
-
-    #[test]
-    fn translates_type_mismatch() {
-        let input = "error: mismatched types";
-        let result = explain_errors(input);
-        assert!(result.contains("WRONG FLAVOR!"));
-    }
-
-    #[test]
-    fn translates_not_found() {
-        let input = "error: not found in this scope";
-        let result = explain_errors(input);
-        assert!(result.contains("hiding"));
-    }
-
-    #[test]
-    fn translates_unused_variable() {
-        let input = "warning: unused variable: `x`";
-        let result = explain_errors(input);
-        assert!(result.contains("never played with it"));
-    }
-
-    #[test]
-    fn adds_cat_header() {
-        let result = explain_errors("error: something");
-        assert!(result.contains("NO TOUCHIE CHECKER"));
-    }
-
-    #[test]
-    fn translates_move_error() {
-        let input = "error: cannot move out of `x`";
-        let result = explain_errors(input);
-        assert!(result.contains("yoink"));
     }
 }

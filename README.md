@@ -9,7 +9,7 @@
 
 **A programming language based on Rust, but in lolcat speak.**
 
-Write real, compiled programs using keywords like `i can haz wiggly`, `zoomies`, and `yolo`. LolRust transpiles `.meow` files into valid Rust, then compiles them with `rustc`. You get Rust's type system, borrow checker (the **No Touchie Checker**), and zero-cost abstractions. But with 100% more cat.
+Write real, compiled programs using keywords like `i can haz wiggly`, `zoomzoom`, and `yolo`. LolRust transpiles `.meow` files into valid Rust, then compiles them with `rustc`. You get Rust's type system, borrow checker (the **No Touchie Checker**), and zero-cost abstractions. But with 100% more cat.
 
 ## Quick Start
 
@@ -57,20 +57,20 @@ Yes, that compiles. Yes, it runs. No, we are not sorry.
 | `hisss!` | `eprintln!` | angry output |
 | `ohno!` | `panic!` | oh no |
 | `loaf` | `struct` | cats are just loaves |
-| `teech` | `impl` | teach the loaf new tricks |
+| `teech` / `pounce` | `impl` | teach the loaf new tricks |
 | `flavurz` | `enum` | different flavors of a thing |
 | `skillz` | `trait` | what a kitteh can do |
-| `sniff` | `match` | cats investigate by sniffing |
+| `sniff` / `skritch dat` | `match` | cats investigate by sniffing |
 | `if ceiling cat sez` | `if` | ceiling cat watches over all |
 | `or if ceiling cat sez` | `else if` | ceiling cat has more to say |
 | `or basement cat sez` | `else` | the dark alternative |
-| `zoomies` | `loop` | infinite energy |
-| `chase` | `for` | cats chase things |
+| `zoomzoom` | `loop` | so much energy it zooms twice |
+| `chase` / `furrever` | `for` | cats chase things |
 | `around` | `in` | chase things *around* |
-| `keep goin while` | `while` | self-explanatory |
-| `flop` | `break` | cat flops down, loop stops |
+| `prowl` / `repeat while` | `while` | self-explanatory |
+| `flop` / `nap` | `break` | cat flops down, loop stops |
 | `again` | `continue` | do it again! |
-| `cough up` | `return` | like a hairball, but it's a value |
+| `cough up` / `yeet` | `return` | like a hairball, but it's a value |
 | `everycat` | `pub` | visible to everycat |
 | `gimme` | `use` | gimme that module |
 | `box` | `mod` | cats love boxes |
@@ -88,6 +88,24 @@ Yes, that compiles. Yes, it runs. No, we are not sorry.
 | `dis` | `self` | dis right here |
 | `Dis` | `Self` | Dis type right here |
 | `chonk` | `super` | the big cat up a level |
+| `bigchonk` | `crate` | the biggest chonk, the whole crate |
+| `purrive` | `#[derive` | the cat has arrived (with derived traits) |
+
+### Beginner-friendly aliases (new in 0.2.0)
+
+For Meowademy and learners, these read more like English. They map to the same Rust output as the more whimsical originals above ~ pick whichever vibe you want.
+
+| LolRust (alias) | Rust | Equivalent classic |
+|-----------------|------|-------------------|
+| `make` | `let` | `i can haz` |
+| `make wiggly` | `let mut` | `i can haz wiggly` |
+| `when` | `if` | `if ceiling cat sez` |
+| `otherwise` | `else` | `or basement cat sez` |
+| `repeat while` | `while` | `prowl` |
+| `do this` | `loop` | `zoomzoom` |
+| `say` | `println!` | `meow!` |
+| `bigsay` | `println!` | `meow!` |
+| `yell` | `eprintln!` | `hisss!` |
 
 ### Types
 
@@ -123,7 +141,7 @@ iz main() {
     meow!("=== GESSING GAEM ===");
     meow!("I iz thinking of a numbr between 1 and 100...");
 
-    zoomies {
+    zoomzoom {
         meow!("Gess a numbr:");
 
         i can haz wiggly input = Yarn::new();
@@ -278,7 +296,7 @@ Syntax highlighting and snippets for `.meow` files live in the `lolrust-vscode/`
 
 **Features:**
 - Full syntax highlighting for all 48 keywords (including multi-word ones)
-- 20 code snippets (`izmain`, `meow`, `icanhazwiggly`, `zoomies`, `sniff`, `yolo`, etc.)
+- 20 code snippets (`izmain`, `meow`, `icanhazwiggly`, `zoomzoom`, `sniff`, `yolo`, etc.)
 - Bracket matching, auto-closing pairs, comment toggling
 
 **Install:**

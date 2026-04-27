@@ -1,0 +1,67 @@
+i can haz loaf RedDot {
+    x: i32,
+    y: i32,
+    lives: u8,
+}
+
+flavurz HuntResult {
+    CaughtCheezburger,
+    MissedAndSad,
+    NapTime,
+}
+
+iz main() {
+    i can haz wiggly dot = RedDot { x: 42, y: 69, lives: 9 };
+    i can haz wiggly score = 0;
+    i can haz wiggly attempts = 0;
+
+    meow!"Welcome to HUNT THE RED DOT - Edition 2026";
+    meow!"U have 9 lives. Catch da dot or become sad kitteh.";
+
+    zoomzoom {
+        attempts = attempts + 1;
+
+        i can haz guess_x = ask_for_number("X position?");
+        i can haz guess_y = ask_for_number("Y position?");
+
+        skritch dat (guess_x, guess_y) {
+            (dot.x, dot.y) => {
+                meow!"YOU CAUGHT DA RED DOT!!! U WINZ!!!";
+                score = score + 100;
+                yeet HuntResult::CaughtCheezburger;
+            }
+            _ => {
+                dot.lives = dot.lives - 1;
+                meow!"Missed! da dot zoomed away. {} lives left.", dot.lives;
+
+                skritch dat dot.lives {
+                    0 => {
+                        meow!"OH NOES. U RAN OUT OF LIVES. Game over kitteh :(";
+                        yeet HuntResult::MissedAndSad;
+                    }
+                    1..=3 => meow!"u r getting sleepy...",
+                    _ => {}
+                }
+            }
+        }
+
+        if ceiling cat sez dot.lives < 1 {
+            flop;
+        }
+
+        if ceiling cat sez attempts > 15 {
+            meow!"U took too long. da dot got bored and left.";
+            flop;
+        }
+    }
+
+    meow!"Final score: {}", score;
+    meow!"Thanks for playing, hooman!";
+}
+
+iz ask_for_number(prompt: &str) -> i32 {
+    meow! "{}", prompt;
+    i can haz mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    input.trim().parse().unwrap_or(0)
+}
